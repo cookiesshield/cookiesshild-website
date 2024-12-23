@@ -1,0 +1,153 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+   
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <title>cookies shield</title>
+</head>
+
+<body>
+    <nav id="nav">
+        <div class="left-nav">
+            <h3 class="menuItem">cookies shield</h3>
+        </div>
+       
+      <div class="right-nav">
+   <a href="about.html" class="about-button">About</a>
+   <a href="news.html">News</a>
+   <a href="up.html">Try Now</a>
+   <a href="signup.html" class="signup-button">Sign Up</a>
+   
+     </div>    
+            
+    </nav>
+    <section class="hero">
+        <h1>Take Control of Your Online Privacy</h1>
+        <p>Cookies Shield helps you manage and safeguard your browsing experience effortlessly.</p>
+        <a href="signup.html" class="cta-button">Get Started</a>
+    </section>
+
+   
+    <section class="features">
+        <h2>Features</h2>
+        <div class="features-list">
+            <div class="feature-item">
+                <h3>Comprehensive Cookie Management</h3>
+                <p>Control and customize cookie preferences for every site you visit.</p>
+            </div>
+            <div class="feature-item">
+                <h3>Global Compliance</h3>
+                <p>Stay compliant with GDPR, CCPA, and other global regulations effortlessly.</p>
+            </div>
+            <div class="feature-item">
+                <h3>Easy Integration</h3>
+                <p>Seamlessly integrate Cookies Shield into your website or application.</p>
+            </div>
+        </div>
+    </section>
+    <section class="hero">
+    <h1>Take Control of Your Online Privacy</h1>
+    <p>Cookies Shield helps you manage and safeguard your browsing experience effortlessly.</p>
+    <video width="600" controls>
+        <source src="Cookies shield.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <a href="signup.html" class="cta-button">Get Started</a>
+</section>
+<section class="buy-now" id="buy-now">
+    <div class="product-wrapper">
+        <div class="product-info">
+            <h1 class="product-title">Cookies Shield Premium</h1>
+            <p class="product-description">
+                Upgrade to Cookies Shield Premium to unlock advanced cookie management, enhanced privacy features, 
+                and priority support. Take control of your online experience today!
+            </p>
+            
+            <!-- Pricing Options -->
+            <div class="product-prices">
+                <div class="price-option">
+                    <input type="radio" name="paymentOption" id="yearlyOption" value="49.99" checked>
+                    <label for="yearlyOption">
+                        <h2>$49.99/year</h2>
+                        <p class="price-note">One-time annual payment. Cancel anytime.</p>
+                    </label>
+                </div>
+                <div class="price-option">
+                    <input type="radio" name="paymentOption" id="monthlyOption" value="4.99">
+                    <label for="monthlyOption">
+                        <h2>$4.99/month</h2>
+                        <p class="price-note">Recurring monthly payment. Cancel anytime.</p>
+                    </label>
+                </div>
+                <div class="price-option">
+                    <input type="radio" name="paymentOption" id="oneTimeOption" value="1.99">
+                    <label for="oneTimeOption">
+                        <h2>$1.99</h2>
+                        <p class="price-note">One-time payment. No subscription.</p>
+                    </label>
+                </div>
+            </div>
+            
+            <button class="buy-now-button" id="buyNowButton">Buy Now</button>
+        </div>
+        <div class="product-image">
+            <img src="cookiesshield.webp" alt="Cookies Shield Premium">
+        </div>
+    </div>
+
+    <!-- Payment Form (Initially Hidden) -->
+    <div class="payment-form hidden" id="checkoutForm">
+        <h2 class="payment-title">Complete Your Purchase</h2>
+        <form>
+            <label for="name">Name</label>
+            <input type="text" id="name" placeholder="John Doe" required>
+            
+            <label for="email">Email</label>
+            <input type="email" id="email" placeholder="john.doe@example.com" required>
+            
+            <label for="card-number">Card Number</label>
+            <input type="text" id="card-number" placeholder="1234 5678 9012 3456" required>
+            
+            <div class="card-details">
+                <label for="expiry-date">Expiry Date</label>
+                <input type="text" id="expiry-date" placeholder="MM/YY" required>
+                
+                <label for="cvv">CVV</label>
+                <input type="text" id="cvv" placeholder="123" required>
+            </div>
+            
+            <button type="submit" class="submit-button">Checkout</button>
+        </form>
+        <span class="close-checkout" id="closeCheckout">X</span>
+    </div>
+</section>
+
+    
+    
+    
+
+  
+    <footer>
+        <p>&copy; 2024 Cookies Shield. All rights reserved.</p>
+        <nav>
+            <a href="privacy.html">Privacy Policy</a> 
+            <a href="terms.html">Terms of Service</a>
+        </nav>
+    </footer>
+    <script src="app.js"></script>
+</body>
+
+</html>
+            
+           
+           
+        
+       
+            
+        
+    

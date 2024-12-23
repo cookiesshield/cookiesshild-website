@@ -1,0 +1,113 @@
+]<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload and Analyze</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+        h1 {
+            text-align: center;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .form-group textarea {
+            height: 100px;
+        }
+        .form-group button {
+            width: 100%;
+            padding: 10px;
+            background-color: #512da8;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        .form-group button:hover {
+            background-color: #5c6bc0;
+        }
+        .output {
+            margin-top: 20px;
+            padding: 15px;
+            background: #e2e2e2;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Analyze Text or Upload File</h1>
+    <div class="container">
+        <form id="analyzeForm">
+            <div class="form-group">
+                <label for="text">Type Text:</label>
+                < textarea id="text" placeholder="Type your text here..."></textarea>
+            </div>
+            <div class="form-group">
+                <label for="file">Upload File:</label>
+                <input type="file" id="file" accept=".txt,.docx">
+            </div>
+            <div class="form-group">
+                <button type="button" id="analyzeBtn">Analyze</button>
+            </div>
+        </form>
+        <div id="output" class="output" style="display: none;"></div>
+    </div>
+
+    <script>
+        document.getElementById('analyzeBtn').addEventListener('click', async () => {
+            const text = document.getElementById('text').value;
+            const fileInput = document.getElementById('file');
+            const file = fileInput.files[0];
+            const output = document.getElementById('output');
+
+            // Prepare form data
+            const formData = new FormData();
+            if (text) formData.append("text", text);
+            if (file) formData.append("file", file);
+
+            try {
+                const response = await fetch("http://localhost:5000/analyze", {
+                    method: "POST",
+                    body: formData,
+                });
+
+                if (!response.ok) {
+                    throw new Error("Failed to analyze the content");
+                }
+
+                const data = await response.json();
+                output.style.display = "block";
+                output.innerHTML = `<h3>Key Points:</h3><p>${data.summary.join('<br>')}</p>`;
+            } catch (error) {
+                output.style.display = "block";
+                output.innerHTML = `<p style="color: red;">${error.message}</p>`;
+            }
+        });
+    </script>
+</body>
+</html>
